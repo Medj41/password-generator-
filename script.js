@@ -104,7 +104,7 @@ function getPasswordOptions() {
       //   let userUpperCaseCharacters = confirm ('Click ok to confirm including upperCase characters');
       //   let userLowerCaseCharacters = confirm ('Click ok to confirm including LowerCase characters');
 
-       var  result = {
+       var  inpuResult = {
           numberOfCha: numberOfCharacters,
           special:confirm ('Click ok to confirm including special characters'),
           num:confirm ('Click ok to confirm including numeric characters'),
@@ -113,7 +113,7 @@ function getPasswordOptions() {
           
       };
 
-  return result;
+  return inpuResult;
   }
   
   
@@ -122,9 +122,9 @@ function getPasswordOptions() {
     
 
 
-var result = getPasswordOptions();
+var inpuResult = getPasswordOptions();
 
-console.log(result);
+console.log(inpuResult);
 
 
 
@@ -143,28 +143,34 @@ function getRandom(arr) {
   // const randomLower = lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
 
   // result.inpt = result.numberOfCha;
-
-  if (result.special === true){
-    result.randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+  let pwOutpu ={
+    randomUpper: '',
+    randomSpecial: '',
+    randomNum:'',
+    randomLower:''
+   
+   }
+  if (inpuResult.special === true){
+    pwOutpu.randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
 
   }
-  if (result.num === true){
-    result.randomNum = numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
+  if (inpuResult.num === true){
+    pwOutpu.randomNum = numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
     
   }
-  if (result.upper === true){
-    result.randomLower = lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
+  if (inpuResult.upper === true){
+    pwOutpu.randomLower = lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
     
   }
-  if (result.lower === true){
-    result.randomUpper = upperCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
+  if (inpuResult.lower === true){
+    pwOutpu.randomUpper = upperCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
     
   }
   
   
 
 
- let pwOutpu = result.randomUpper + result.randomSpecial + result.randomNum + result.randomLower ;
+ 
   // console.log(pwTest);  
   return pwOutpu;
 }
@@ -175,7 +181,7 @@ function getRandom(arr) {
 
 
 
-console.log(getRandom(result));
+console.log(getRandom(inpuResult));
 
 
 
