@@ -169,10 +169,11 @@ function getRandom(arr) {
   
   
 
+  
+  console.log(pwOutpu.randomUpper + pwOutpu.randomLower+ pwOutpu.randomSpecial + pwOutpu.randomNum);
 
- 
-  // console.log(pwTest);  
   return pwOutpu;
+
 }
 
 
@@ -182,6 +183,8 @@ function getRandom(arr) {
 
 
 console.log(getRandom(inpuResult));
+
+
 
 
 
