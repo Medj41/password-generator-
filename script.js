@@ -90,38 +90,48 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let numberOfCharacters = prompt('Password length should be between 8 and 128') 
-  if (numberOfCharacters < 8){
-      alert('Not enough characters')
-      prompt('Try agin')   
-  } else if (numberOfCharacters > 128) {
-    alert('Too many characters')
-    prompt('Try agin')   
-  };
+  let numberOfCharacters = prompt('Enter number of characters you wish to generate') ;
+  let numberPicked = numberOfCharacters;
+  
+      while (numberOfCharacters < 8 || numberOfCharacters > 128){
 
-  let userSpecialCharacters = confirm ('Click ok to confirm including special characters')
+      alert('Password length should be between 8 and 128');
+        prompt('Try agin') ;
+         numberOfCharacters ++;
+      };
+      
+      
+      if (numberOfCharacters > 8 || numberOfCharacters < 128) {
+        let userSpecialCharacters = confirm ('Click ok to confirm including special characters')
+        let userNumericCharacters =  confirm ('Click ok to confirm including numeric characters')
+        let userUpperCaseCharacters = confirm ('Click ok to confirm including upperCase characters')
+        let userLowerCaseCharacters = confirm ('Click ok to confirm including LowerCase characters')
+      };
+        
 
 
-
-  let userNumericCharacters =  confirm ('Click ok to confirm including numeric characters')
-  let userUpperCaseCharacters = confirm ('Click ok to confirm including upperCase characters')
-  let userLowerCaseCharacters = confirm ('Click ok to confirm including LowerCase characters')
-
-
-  let result = {
-    numberOfCha: numberOfCharacters,
-    special:userSpecialCharacters,
-    num:userNumericCharacters,
-    upper:userUpperCaseCharacters,
-    lower:userLowerCaseCharacters
-  }
+      
   
 
-  return;
-};
+ 
+
+  
+
+  
 
 
+  // let result = {
+  //   numberOfCha: numberOfCharacters,
+  //   special:userSpecialCharacters,
+  //   num:userNumericCharacters,
+  //   upper:userUpperCaseCharacters,
+  //   lower:userLowerCaseCharacters
+  // }
+  
 
+  
+
+    }
 
 let userchoices = getPasswordOptions();
 
@@ -131,30 +141,32 @@ let userchoices = getPasswordOptions();
 
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+// function getRandom(arr) {
 
 
-  const randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+//   const randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
 
-  const randomNum = numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
+//   const randomNum = numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
 
-  const randomUpper = upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
+//   const randomUpper = upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
 
-  const randomLower = lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
-
-
-  pwTest = [randomUpper, randomSpecial, randomNum, randomLower ];
-  console.log(pwTest);  
-  return pwTest;
-}
+//   const randomLower = lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
 
 
 
 
+//  let pwTest = randomUpper + randomSpecial + randomNum + randomLower ;
+//   // console.log(pwTest);  
+//   return pwTest;
+// }
 
 
 
-console.log(getRandom(getPasswordOptions()));
+
+
+
+
+// console.log(getRandom());
 
 
 
