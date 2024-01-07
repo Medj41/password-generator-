@@ -172,7 +172,8 @@ function getRandom(arr) {
   
   console.log(pwOutpu.randomUpper + pwOutpu.randomLower+ pwOutpu.randomSpecial + pwOutpu.randomNum);
 
-  return pwOutpu;
+  let PassWord = pwOutpu.randomUpper + pwOutpu.randomLower + pwOutpu.randomSpecial + pwOutpu.randomNum;
+  return PassWord;
 
 }
 
@@ -192,8 +193,8 @@ console.log(getRandom(inpuResult));
 // Function to generate password with user input
 function generatePassword() {
 
-
-
+var generatedPW = getRandom();
+return generatedPW;
   
 }
 
