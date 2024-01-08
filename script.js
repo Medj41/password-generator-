@@ -99,23 +99,22 @@ function getPasswordOptions() {
     getPasswordOptions();
   };
 
-  let speCharacter = confirm('Click ok to confirm including special characters');
-
-  if (!speCharacter) {
-    alert('PassWord must contain special Characters, Please try again');
-    getPasswordOptions();
-  };
 
   var inputResult = {
     numberOfCha: numberOfCharacters,
-    special: speCharacter,
+    special: confirm('Click ok to confirm including special characters'),
     num: confirm('Click ok to confirm including numeric characters'),
-    upper: confirm('Click ok to confirm including upperCase characters'),
+    upper: confirm('Click ok to confirm including UpperCase characters'),
     lower: confirm('Click ok to confirm including LowerCase characters'),
 
   };
 
+  if (inputResult.special, inputResult.num, inputResult.upper, inputResult.lower === false) {
+    alert('PassWord must contain at lease one Characters, Please try again');
+    getPasswordOptions() 
+  };
 
+  
 
   console.log(inputResult.numberOfCha);
   return inputResult;
