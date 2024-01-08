@@ -90,33 +90,37 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let numberOfCharacters = prompt('Enter number of characters you wish to generate') ;
-5
-  
-      if (numberOfCharacters < 8 || numberOfCharacters > 128){
+  let numberOfCharacters = prompt('Enter number of characters you wish to generate');
 
-      alert('Password length should be between 8 and 128');
-      getPasswordOptions();
-      };
-      
-      // } else if (numberOfCharacters > 8 || numberOfCharacters < 128) {
-      //   let userSpecialCharacters = confirm ('Click ok to confirm including special characters');
-      //   let userNumericCharacters =  confirm ('Click ok to confirm including numeric characters');
-      //   let userUpperCaseCharacters = confirm ('Click ok to confirm including upperCase characters');
-      //   let userLowerCaseCharacters = confirm ('Click ok to confirm including LowerCase characters');
 
-       var  inputResult = {
-          numberOfCha: numberOfCharacters,
-          special:confirm ('Click ok to confirm including special characters'),
-          num:confirm ('Click ok to confirm including numeric characters'),
-          upper:confirm ('Click ok to confirm including upperCase characters'),
-          lower:confirm ('Click ok to confirm including LowerCase characters'),
-          
-      };
-console.log(inputResult.numberOfCha);
-  return inputResult;
+  if (numberOfCharacters < 8 || numberOfCharacters > 128) {
+
+    alert('Password length should be between 8 and 128');
+    getPasswordOptions();
   };
-  
+
+  let speCharacter = confirm('Click ok to confirm including special characters');
+
+  if (!speCharacter) {
+    alert('PassWord must contain special Characters, Please try again');
+    getPasswordOptions();
+  };
+
+  var inputResult = {
+    numberOfCha: numberOfCharacters,
+    special: speCharacter,
+    num: confirm('Click ok to confirm including numeric characters'),
+    upper: confirm('Click ok to confirm including upperCase characters'),
+    lower: confirm('Click ok to confirm including LowerCase characters'),
+
+  };
+
+
+
+  console.log(inputResult.numberOfCha);
+  return inputResult;
+};
+
 var inputResult = getPasswordOptions();
 
 console.log(inputResult);
@@ -128,45 +132,45 @@ console.log(inputResult);
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  let pwOutput ={
-    numberOfCha : '',
+  let pwOutput = {
+    numberOfCha: '',
     randomUpper: '',
     randomSpecial: '',
-    randomNum:'',
-    randomLower:''
-   
-   };
-  if (inputResult.special === true){
+    randomNum: '',
+    randomLower: ''
+
+  };
+  if (inputResult.special === true) {
     pwOutput.randomSpecial = specialCharacters;
 
   };
-  if (inputResult.num === true){
+  if (inputResult.num === true) {
     pwOutput.randomNum = numericCharacters;
-    
+
   };
-  if (inputResult.upper === true){
+  if (inputResult.upper === true) {
     pwOutput.randomUpper = upperCasedCharacters;
-    
+
   };
-  if (inputResult.lower === true){
+  if (inputResult.lower === true) {
     pwOutput.randomLower = lowerCasedCharacters;
-    
+
   };
-  
+
 
 
   let merged = pwOutput.randomUpper + pwOutput.randomLower + pwOutput.randomSpecial + pwOutput.randomNum;
-  
-  
-  
-console.log(merged);
-let newPassWord = '';
+
+
+
+  console.log(merged);
+  let newPassWord = '';
   for (let i = 0; i < inputResult.numberOfCha; i++) {
-    newPassWord  += merged[Math.floor(Math.random() * merged.length)];
+    newPassWord += merged[Math.floor(Math.random() * merged.length)];
     console.log(newPassWord);
   }
 
-console.log(newPassWord.length);
+  console.log(newPassWord.length);
   return newPassWord;
 
 };
@@ -182,9 +186,13 @@ console.log(getRandom(inputResult));
 // Function to generate password with user input
 function generatePassword() {
 
-var generatedPW = getRandom();
-return generatedPW;
-  
+  var generatedPW = '';
+
+
+  generatedPW = getRandom();
+  return generatedPW;
+
+
 };
 
 
