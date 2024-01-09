@@ -96,7 +96,7 @@ function getPasswordOptions() {
   if (numberOfCharacters < 8 || numberOfCharacters > 128) {
 
     alert('Password length should be between 8 and 128');
-    getPasswordOptions();
+    return ;
   };
 
 
@@ -109,12 +109,12 @@ function getPasswordOptions() {
 
   };
 
-  if (inputResult.special, inputResult.num, inputResult.upper, inputResult.lower === false) {
+  if (!inputResult) {
     alert('PassWord must contain at lease one Characters, Please try again');
-    getPasswordOptions() 
+    return ;
   };
 
-  
+
 
   console.log(inputResult.numberOfCha);
   return inputResult;
@@ -131,51 +131,89 @@ console.log(inputResult);
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  let pwOutput = {
-    numberOfCha: '',
-    randomUpper: '',
-    randomSpecial: '',
-    randomNum: '',
-    randomLower: ''
+    let pwOutput = {
+      numberOfCha: '',
+      randomUpper: '',
+      randomSpecial: '',
+      randomNum: '',
+      randomLower: ''
 
-  };
-  if (inputResult.special === true) {
-    pwOutput.randomSpecial = specialCharacters;
+    };
 
-  };
-  if (inputResult.num === true) {
-    pwOutput.randomNum = numericCharacters;
+    if (inputResult.special === true) {
+      for (let i = 0; i < specialCharacters.length; i++) {
+        pwOutput.randomSpecial += specialCharacters[i];      
+      };
+    };
 
-  };
-  if (inputResult.upper === true) {
-    pwOutput.randomUpper = upperCasedCharacters;
+    if (inputResult.num === true) {
+      for (let i = 0; i < numericCharacters.length; i++) {
+        pwOutput.randomNum += numericCharacters[i];      
+      };  
+    };
 
-  };
-  if (inputResult.lower === true) {
-    pwOutput.randomLower = lowerCasedCharacters;
+    if (inputResult.upper === true) {
+      for (let i = 0; i < upperCasedCharacters.length; i++) {
+        pwOutput.randomUpper += upperCasedCharacters[i];      
+      };
+    };
 
-  };
+    if (inputResult.lower === true) {
+      for (let i = 0; i < lowerCasedCharacters.length; i++) {
+        pwOutput.randomLower += lowerCasedCharacters[i];      
+      };
+    };
 
 
 
-  let merged = pwOutput.randomUpper + pwOutput.randomLower + pwOutput.randomSpecial + pwOutput.randomNum;
+    let merged = pwOutput.randomUpper +  pwOutput.randomLower +  pwOutput.randomSpecial  + pwOutput.randomNum;
+
+  
+
+    // console.log(merged.split(','));
+    let newPassWord = '';
+    for (let i = 0; i < inputResult.numberOfCha; i++) {
+      newPassWord += merged[Math.floor(Math.random() * merged.length)];
+      // console.log(newPassWord);
+    }
+
+    console.log(newPassWord.length);
+    return newPassWord;
 
 
+  // let pwOutPut = [''];
 
-  console.log(merged);
-  let newPassWord = '';
-  for (let i = 0; i < inputResult.numberOfCha; i++) {
-    newPassWord += merged[Math.floor(Math.random() * merged.length)];
-    console.log(newPassWord);
-  }
+  // if (inputResult.special === true) {
+  //   pwOutPut[0] = specialCharacters;
 
-  console.log(newPassWord.length);
-  return newPassWord;
+  // };
+  // if (inputResult.num === true) {
+  //   pwOutPut[1] = numericCharacters;
 
+  // };
+  // if (inputResult.upper === true) {
+  //   pwOutPut[2] = upperCasedCharacters;
+
+  // };
+  // if (inputResult.lower === true) {
+  //   pwOutPut[3] = lowerCasedCharacters;
+
+  // };
+  // console.log(pwOutPut);
+
+
+  // let randomNum = '';
+  // for (let i = 0; i < inputResult.numberOfCha; i++) {
+  //     const randomNum = pwOutPut[i][0][Math.floor(Math.random() * pwOutPut[i][0].length)];
+  //     console.log(randomNum);
+    
+  // }
+ 
+  // return randomNum;
 };
 
 
-console.log(getRandom(inputResult));
+// console.log(getRandom(inputResult));
 
 
 
