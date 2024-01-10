@@ -91,6 +91,7 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  
   let numberOfCharacters = prompt('Enter number of characters you wish to generate');
 
   if (numberOfCharacters < 8 || numberOfCharacters > 128) {
@@ -111,16 +112,19 @@ function getPasswordOptions() {
   return inputResult;
 };
 
-var inputResult = getPasswordOptions();
+// var inputResult = getPasswordOptions();
 
-console.log(inputResult);
+// console.log(inputResult);
 
 
 
 
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+function getRandom(inputResult) {
+
+
+
 
   let pwOutput = {
     numberOfCha: '',
@@ -168,16 +172,27 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  var inputResult = getPasswordOptions();
+
 
   if (inputResult.special === false && inputResult.num === false && inputResult.upper === false && inputResult.lower === false) {
     generatedPW = 'PassWord must contain at lease one Characters, Please try again';
     return generatedPW;
   } else {
     var generatedPW = '';
-    generatedPW = getRandom();
+    generatedPW = getRandom(inputResult);
     return generatedPW;
   };
 };
+
+
+
+
+
+
+
+
+
 
 
 // Get references to the #generate element
