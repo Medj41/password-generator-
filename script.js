@@ -90,15 +90,14 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let numberOfCharacters = prompt('Enter number of characters you wish to generate');
 
+  let numberOfCharacters = prompt('Enter number of characters you wish to generate');
 
   if (numberOfCharacters < 8 || numberOfCharacters > 128) {
 
     alert('Password length should be between 8 and 128');
-    return ;
+    return numberOfCharacters;
   };
-
 
   var inputResult = {
     numberOfCha: numberOfCharacters,
@@ -109,14 +108,6 @@ function getPasswordOptions() {
 
   };
 
-  if (!inputResult) {
-    alert('PassWord must contain at lease one Characters, Please try again');
-    return ;
-  };
-
-
-
-  console.log(inputResult.numberOfCha);
   return inputResult;
 };
 
@@ -131,122 +122,62 @@ console.log(inputResult);
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-    let pwOutput = {
-      numberOfCha: '',
-      randomUpper: '',
-      randomSpecial: '',
-      randomNum: '',
-      randomLower: ''
+  let pwOutput = {
+    numberOfCha: '',
+    randomUpper: '',
+    randomSpecial: '',
+    randomNum: '',
+    randomLower: ''
 
+  };
+
+  if (inputResult.special === true) {
+    for (let i = 0; i < specialCharacters.length; i++) {
+      pwOutput.randomSpecial += specialCharacters[i];
     };
+  };
 
-    if (inputResult.special === true) {
-      for (let i = 0; i < specialCharacters.length; i++) {
-        pwOutput.randomSpecial += specialCharacters[i];      
-      };
+  if (inputResult.num === true) {
+    for (let i = 0; i < numericCharacters.length; i++) {
+      pwOutput.randomNum += numericCharacters[i];
     };
+  };
 
-    if (inputResult.num === true) {
-      for (let i = 0; i < numericCharacters.length; i++) {
-        pwOutput.randomNum += numericCharacters[i];      
-      };  
+  if (inputResult.upper === true) {
+    for (let i = 0; i < upperCasedCharacters.length; i++) {
+      pwOutput.randomUpper += upperCasedCharacters[i];
     };
+  };
 
-    if (inputResult.upper === true) {
-      for (let i = 0; i < upperCasedCharacters.length; i++) {
-        pwOutput.randomUpper += upperCasedCharacters[i];      
-      };
+  if (inputResult.lower === true) {
+    for (let i = 0; i < lowerCasedCharacters.length; i++) {
+      pwOutput.randomLower += lowerCasedCharacters[i];
     };
+  };
 
-    if (inputResult.lower === true) {
-      for (let i = 0; i < lowerCasedCharacters.length; i++) {
-        pwOutput.randomLower += lowerCasedCharacters[i];      
-      };
-    };
+  let merged = pwOutput.randomUpper + pwOutput.randomLower + pwOutput.randomSpecial + pwOutput.randomNum;
 
-
-
-    let merged = pwOutput.randomUpper +  pwOutput.randomLower +  pwOutput.randomSpecial  + pwOutput.randomNum;
-
-  
-
-    // console.log(merged.split(','));
-    let newPassWord = '';
-    for (let i = 0; i < inputResult.numberOfCha; i++) {
-      newPassWord += merged[Math.floor(Math.random() * merged.length)];
-      // console.log(newPassWord);
-    }
-
-    console.log(newPassWord.length);
-    return newPassWord;
-
-
-  // let pwOutPut = [''];
-
-  // if (inputResult.special === true) {
-  //   pwOutPut[0] = specialCharacters;
-
-  // };
-  // if (inputResult.num === true) {
-  //   pwOutPut[1] = numericCharacters;
-
-  // };
-  // if (inputResult.upper === true) {
-  //   pwOutPut[2] = upperCasedCharacters;
-
-  // };
-  // if (inputResult.lower === true) {
-  //   pwOutPut[3] = lowerCasedCharacters;
-
-  // };
-  // console.log(pwOutPut);
-
-
-  // let randomNum = '';
-  // for (let i = 0; i < inputResult.numberOfCha; i++) {
-  //     const randomNum = pwOutPut[i][0][Math.floor(Math.random() * pwOutPut[i][0].length)];
-  //     console.log(randomNum);
+  let newPassWord = '';
+  for (let i = 0; i < inputResult.numberOfCha; i++) {
+    newPassWord += merged[Math.floor(Math.random() * merged.length)];
     
-  // }
- 
-  // return randomNum;
+  }
+  return newPassWord;
 };
-
-
-// console.log(getRandom(inputResult));
-
-
-
-
 
 
 // Function to generate password with user input
 function generatePassword() {
 
-  var generatedPW = '';
-
-
-  generatedPW = getRandom();
-  return generatedPW;
-
-
+  if (inputResult.special === false && inputResult.num === false && inputResult.upper === false && inputResult.lower === false) {
+    generatedPW = 'PassWord must contain at lease one Characters, Please try again';
+    return generatedPW;
+  } else {
+    var generatedPW = '';
+    generatedPW = getRandom();
+    return generatedPW;
+  };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Get references to the #generate element
