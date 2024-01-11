@@ -5,13 +5,23 @@ This application allows you to generate a random password based on criteria they
 
 ## Application Functionality
 
+
+![Full page ](https://github.com/Medj41/password-generator-/assets/127996990/07618cc4-5ac3-4d8a-aef2-105255f450f4)
+
 The password generator allows users to:
 - Present prompts for password criteria, including:
   - Generate a password when the button is clicked
+  - 
   - Length of password (at least 8 characters but no more than 128)
+ 
+   ![prompt](https://github.com/Medj41/password-generator-/assets/127996990/48e8fe51-72b7-41ec-95fe-79bb47a77bec)
+
   - Character types (Lowercase, Uppercase, Numeric, Special characters)
+  - 
 - Validate each input, ensuring at least one character type is selected
 - Display the generated password in an alert or write it to the page
+
+![PassWord](https://github.com/Medj41/password-generator-/assets/127996990/ef60ff55-c56d-408e-ae45-956712a73ad1)
 
 ## Password Special Characters
 
