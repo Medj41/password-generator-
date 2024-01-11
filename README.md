@@ -13,7 +13,7 @@ The password generator allows users to:
   - Generate a password when the button is clicked
   - 
   - Length of password (at least 8 characters but no more than 128)
-   ![prompt](https://github.com/Medj41/password-generator-/assets/127996990/91a75fa1-59e8-478b-8040-d2a3033b8b27)
+ 
    ![prompt](https://github.com/Medj41/password-generator-/assets/127996990/48e8fe51-72b7-41ec-95fe-79bb47a77bec)
 
   - Character types (Lowercase, Uppercase, Numeric, Special characters)
