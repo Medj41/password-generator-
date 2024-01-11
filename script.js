@@ -88,6 +88,8 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -112,18 +114,9 @@ function getPasswordOptions() {
   return inputResult;
 };
 
-// var inputResult = getPasswordOptions();
-
-// console.log(inputResult);
-
-
-
-
 
 // Function for getting a random element from an array
 function getRandom(inputResult) {
-
-
 
 
   let pwOutput = {
@@ -184,15 +177,6 @@ function generatePassword() {
     return generatedPW;
   };
 };
-
-
-
-
-
-
-
-
-
 
 
 // Get references to the #generate element
