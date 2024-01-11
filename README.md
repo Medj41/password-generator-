@@ -5,13 +5,23 @@ This application allows an employee to generate a random password based on crite
 
 ## Application Functionality
 
+
+![Full page ](https://github.com/Medj41/password-generator-/assets/127996990/07618cc4-5ac3-4d8a-aef2-105255f450f4)
+
 The password generator allows users to:
 - Present prompts for password criteria, including:
   - Generate a password when the button is clicked
+  - 
   - Length of password (at least 8 characters but no more than 128)
+   ![prompt](https://github.com/Medj41/password-generator-/assets/127996990/91a75fa1-59e8-478b-8040-d2a3033b8b27)
+   ![prompt](https://github.com/Medj41/password-generator-/assets/127996990/48e8fe51-72b7-41ec-95fe-79bb47a77bec)
+
   - Character types (Lowercase, Uppercase, Numeric, Special characters)
+  - 
 - Validate each input, ensuring at least one character type is selected
 - Display the generated password in an alert or write it to the page
+
+![PassWord](https://github.com/Medj41/password-generator-/assets/127996990/ef60ff55-c56d-408e-ae45-956712a73ad1)
 
 ## Password Special Characters
 
@@ -29,21 +39,5 @@ The password may include special characters. For reference, you can check the [l
 * GitHub repository that contains application code.
 
 
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
 
 
