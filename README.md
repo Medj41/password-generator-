@@ -30,13 +30,13 @@ The password may include special characters. For reference, you can check the [l
  The application does not produce any errors in the console when you inspect it using Chrome DevTools.
 
 
-* Application deployed at live URL.
+* Application deployed at live URL. https://medj41.github.io/password-generator-/
 
 * Application loads with no errors.
 
 * Application GitHub URL submitted.
 
-* GitHub repository that contains application code.
+* GitHub repository that contains application code. https://github.com/Medj41/password-generator-
 
 
 
